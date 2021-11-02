@@ -70,7 +70,7 @@ app.get('/video-detail/:videoId?', function (req, res) {
             videoUrl = video_query;
         }
         else {
-            res.render('video-single', {videoInfo: {}, title: 'Single Video'})
+            res.render('video-single-default', {videoInfo: {}, title: 'Single Video'})
         }
 
 
