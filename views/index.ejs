@@ -1,0 +1,66 @@
+<%- include('header.ejs') %>
+
+<div class="row">
+    <div class="col-12 col-xl-12 col-xxl-12 mb-5">
+
+        <section class="scroll-section" id="inlineForms">
+            <div class="card mb-5 search-tool-bar">
+                <div class="card-body">
+                    <form action="/" class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="search_field" name="search_query" placeholder="learn chess online" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Search Videos</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <h5>Showing result for <strong><%= search_query %></strong></h5>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-2 mb-5">
+            <%
+                if (videos) {
+                    videos.forEach((video, index) => { %>
+
+                        <div class="col">
+                            <div class="card h-100">
+                                <iframe class="card-img-top sh-19" src="https://www.youtube.com/embed/<%= video.id %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="card-body">
+                                    <h5 class="heading mb-3">
+                                        <a target="_blank" href="/video-detail/<%= video.id %>" class="">
+                                            <h6><%= video.title %></h6>
+                                        </a>
+                                    </h5>
+                                    <div>
+                                        <div class="row g-0">
+                                            <div class="col-auto pe-3">
+                                                <span title="Views"><i class="fas fa-eye"></i> <%= video.views %></span>
+                                            </div>
+                                            <div class="col">
+                                                <span title="Uploaded"><i class="fas fa-clock"></i> <%= video.uploaded %></span>
+                                            </div>
+                                            <div class="col-auto pe-1">
+                                                <a target="_blank" href="<%= video.channel.link %>"><span title="Channel Name"><i class="fab fa-youtube"></i> <%= video.channel.name %></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <% })
+                }
+            %>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<%- include('footer.ejs') %>

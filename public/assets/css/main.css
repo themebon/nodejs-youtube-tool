@@ -1,0 +1,54 @@
+/* This file is reserved for overriding and extending the template styles. */
+.comments-information h4 {
+    /* padding-left: 30px; */
+    padding: 16px;
+}
+body {
+    font-size: 94%;
+}
+.youtube-iframe iframe {
+    width: 400px;
+}
+.card.search-tool-bar {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+#search_field {
+    width: 530px;
+}
+html[data-placement="horizontal"] main {
+    padding-top: 30px;
+}
+
+.loader{
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:url("../img/loading.gif") 50% 50% no-repeat #f9f9f9;
+    opacity:1
+}
+.loader h3 {
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 38%;
+}
+.header-area {
+    display: inline-flex;
+}
+.menu-items {
+    margin-top: 17px;
+    margin-left: 20px;
+}
+.menu-items a {
+    padding: 11px;
+}
+#inlineForms {
+    padding-top: 50px;
+    padding-bottom: 40px;
+}

@@ -1,0 +1,111 @@
+<%- include('header.ejs') %>
+<style>
+    tbody tr td:first-child {
+        width: 9em;
+        min-width: 9em;
+        max-width: 9em;
+        word-break: break-all;
+    }
+</style>
+<div class="row">
+    <div class="col-12 col-xl-12 col-xxl-12 mb-5">
+        <section class="scroll-section" id="inlineForms">
+            <div class="card mb-5 search-tool-bar">
+                <div class="card-body">
+                    <form action="/video-detail/" class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="search_field" name="video_query" placeholder="https://www.youtube.com/watch?v=me8Bcd8-U38" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Get Video Info</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="row row-cols-1 row-cols-sm-12 row-cols-xl-12 g-2 mb-5">
+            <h3>Video Detail</h3>
+
+            <section class="scroll-section" id="basic">
+                <div class="card mb-5">
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td>Video URL</td>
+                                <td><a target="_blank" href="<%= videoInfo.webpage_url %>"><%= videoInfo.webpage_url %></a></td>
+                            </tr>
+                            <tr>
+                                <td>Title</td>
+                                <td><%= videoInfo.title %></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td><%= videoInfo.description %></td>
+                            </tr>
+                            <tr>
+                                <td>Video Comments</td>
+                                <td><a target="_blank" href="/comments/<%= videoInfo.id %>">Comments with Sentiment Analysis</a></td>
+                            </tr>
+                            <tr>
+                                <td>Channel Name</td>
+                                <td><a target="_blank" href="<%= videoInfo.channel_url %>"><%= videoInfo.channel %></a></td>
+                            </tr>
+                            <tr>
+                                <td>Video Category</td>
+                                <td><%= videoInfo.categories %></td>
+                            </tr>
+                            <tr>
+                                <td>Like Count</td>
+                                <td><%= videoInfo.like_count %></td>
+                            </tr>
+                            <tr>
+                                <td>Dislike Count</td>
+                                <td><%= videoInfo.dislike_count %></td>
+                            </tr>
+                            <tr>
+                                <td>Video Tags</td>
+                                <td><%= videoInfo.tags %></td>
+                            </tr>
+                            <tr>
+                                <td>Average Rating</td>
+                                <td><%= videoInfo.average_rating.toFixed(2) %></td>
+                            </tr>
+                            <tr>
+                                <td>Video Format</td>
+                                <td><%= videoInfo.format %></td>
+                            </tr>
+                            <tr>
+                                <td>Video Extension</td>
+                                <td><%= videoInfo.ext %></td>
+                            </tr>
+                            <tr>
+                                <td>Video Width</td>
+                                <td><%= videoInfo.width %></td>
+                            </tr>
+                            <tr>
+                                <td>Download Video</td>
+                                <td><a href="<%= videoInfo.url %>">Download Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Video Thumbnail</td>
+                                <td><img src="<%= videoInfo.thumbnail %>" alt=""></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<%- include('footer.ejs') %>

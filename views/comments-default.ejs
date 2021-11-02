@@ -1,0 +1,75 @@
+<%- include('header.ejs') %>
+<div class="row">
+    <div class="col-12 col-xl-12 col-xxl-12 mb-5">
+
+        <section class="scroll-section" id="inlineForms">
+            <div class="card mb-5 search-tool-bar">
+                <div class="card-body">
+                    <form action="/comments/" class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="search_field" name="comment_query" placeholder="https://www.youtube.com/watch?v=me8Bcd8-U38" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Get Comments</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="row row-cols-1 row-cols-sm-12 row-cols-xl-12 g-2 mb-5">
+            <div class="comments-information d-flex justify-content-center m-auto">
+
+            </div>
+            <div class="col-12 col-lg-6">
+                <section class="scroll-section" id="basic">
+                    <div class="card mb-5">
+                        <h4 class="m-auto mt-2">Negative Comments</h4>
+                        <div class="card-body">
+                            <table class="table">
+                                <tbody>
+                                <thead>
+                                <tr>
+                                    <th scope="col" title="Comment Sentiment Score">Score</th>
+                                    <th scope="col">Comment</th>
+                                </tr>
+                                </thead>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <section class="scroll-section" id="basic">
+                    <div class="card mb-5">
+                        <h4 class="m-auto mt-2">Positive Comments</h4>
+                        <div class="card-body">
+                            <table class="table">
+                                <tbody>
+                                <thead>
+                                <tr>
+                                    <th scope="col" title="Comment Sentiment Score">Score</th>
+                                    <th scope="col">Comment</th>
+                                </tr>
+                                </thead>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<%- include('footer.ejs') %>
